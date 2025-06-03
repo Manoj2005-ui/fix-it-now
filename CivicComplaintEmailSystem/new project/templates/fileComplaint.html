@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <link rel="icon" type="image/png" href="rtp.png">
+  <title>File Complaint - Civic Complaint Management System</title>
+</head>
+<body>
+  <div class="toggle-dark" onclick="toggleDarkMode()">🌙</div>
+
+  <header>
+    <h2>File a Complaint</h2>
+  </header>
+
+  <div class="container" id="fileComplaint">
+    <input type="file" id="image" accept="image/*" onchange="previewImage()" />
+    <img id="imagePreview" style="max-width: 100px;" />
+    <input type="text" id="address" placeholder="Enter Address" />
+    <input type="text" id="location" placeholder="Enter Location" />
+
+    <label for="department">Select Department:</label>
+    <select id="department" name="department" required>
+      <option value="">--Select--</option>
+      <option value="Road Department">Road Department</option>
+      <option value="Water Department">Water Department</option>
+      <option value="Electricity Department">Electricity Department</option>
+    </select>
+
+    <select id="category">
+      <option value="">Select Category</option>
+      <option value="Road">Road</option>
+      <option value="Water">Water</option>
+      <option value="Electricity">Electricity</option>
+      <option value="Garbage">Garbage</option>
+    </select>
+
+    <button onclick="submitComplaint()">Submit</button>
+    <div class="spinner" id="submitSpinner" style="display: none;"></div>
+    <a href="dashboard.html"><button>Back</button></a>
+  </div>
+</body>
+</html>
